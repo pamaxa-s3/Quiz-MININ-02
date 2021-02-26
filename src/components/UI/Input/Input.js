@@ -23,7 +23,7 @@ const Input = props => {
             onChange={props.onChange}
          />
          {
-            invalid(props)
+            isInvalid(props)
                ? <span>{props.errorMessage}</span> || 'Поле заполнено не верно'
                : null
          }

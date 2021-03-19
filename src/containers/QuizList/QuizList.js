@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import classes from './QuizList.module.scss'
-import axios from 'axios'
+import axios from '../../axios/axios-quiz'
 import Loader from '../../components/UI/Loader/Loader'
 
 export default class QuizList extends Component {
@@ -25,7 +25,7 @@ export default class QuizList extends Component {
 
    async componentDidMount() {
       try {
-         const response = await axios.get('https://react-quiz-pmx-default-rtdb.europe-west1.firebasedatabase.app/quizes.json')
+         const response = await axios.get('quizes.json')
 
 
          const quizes = []
@@ -37,7 +37,7 @@ export default class QuizList extends Component {
             })
          })
          this.setState({
-            quizes,
+            quizes, loading: false
          })
       } catch (e) {
          console.log(e)

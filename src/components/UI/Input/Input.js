@@ -18,7 +18,7 @@ const Input = props => {
          <label htmlFor={htmlFor}>{props.label}</label>
          <input
             id={htmlFor}
-            type="text"
+            type={props.type}
             value={props.value}
             onChange={props.onChange}
          />
